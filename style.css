@@ -1,0 +1,199 @@
+/* 全体レイアウト */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "ヒラギノ角ゴ ProN",
+               "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.store-page {
+  max-width: 960px;
+  margin: 24px auto;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* ヘッダー */
+.store-header {
+  background: #ffc72c;          /* マクドナルドの黄色 */
+  color: #111;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.store-logo {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c00000;               /* ロゴっぽい赤 */
+}
+
+.store-name {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.store-tagline {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* メイン部分 */
+.store-main {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.6fr);
+  gap: 16px;
+}
+
+.store-info,
+.store-hours,
+.store-access,
+.store-services,
+.store-map {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+/* 小さい画面では1カラムに */
+@media (max-width: 768px) {
+  .store-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 見出し */
+.store-main h2 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  border-left: 4px solid #ffc72c;
+  padding-left: 8px;
+}
+
+/* 店舗情報 */
+.store-address,
+.store-tel,
+.store-seats {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* 営業時間 */
+.store-hours ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+.store-hours li {
+  margin: 4px 0;
+}
+
+.store-hours li span {
+  display: inline-block;
+  min-width: 48px;
+  font-weight: 600;
+}
+
+.store-hours .note {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #777;
+}
+
+/* アクセス */
+.store-access ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+.store-access li::before {
+  content: "・";
+  margin-right: 2px;
+}
+
+/* サービスバッジ */
+.service-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: #f3f3f3;
+  border: 1px solid #ddd;
+}
+
+
+/* 地図エリア */
+.store-map .map-placeholder {
+  margin-top: 8px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 14px;
+}
+
+/* ちょっとしたホバー */
+.store-info,
+.store-hours,
+.store-access,
+.store-services,
+.store-map {
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.store-info:hover,
+.store-hours:hover,
+.store-access:hover,
+.store-services:hover,
+.store-map:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
+}
+.store-image {
+  margin-top: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.store-image img {
+  width: 100%;
+  display: block;
+}
+.map-embed iframe {
+  width: 100%;
+  height: 260px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.map-embed iframe {
+  width: 100%;
+  height: 260px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
