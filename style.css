@@ -107,10 +107,7 @@ body {
   font-size: 14px;
 }
 
-.badge-wifi {
-  background: #4caf50;
-  color: #fff;
-}
+
 
 /* ------------------------------
    Google Map
@@ -155,4 +152,37 @@ body {
     margin: 10px auto;
     width: 80%;
   }
+  /* ------------------------------
+   メニュー
+------------------------------ */
+.store-menu .menu-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.menu-item {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+}
+
+.menu-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.menu-item h3 {
+  font-size: 16px;
+  margin: 10px 0 5px;
+}
+
+.menu-item p {
+  font-size: 14px;
+  color: #666;
+}
 }
