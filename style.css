@@ -1,199 +1,158 @@
-/* 全体レイアウト */
+/* ------------------------------
+   全体レイアウト
+------------------------------ */
 body {
+  font-family: "Noto Sans JP", sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "ヒラギノ角ゴ ProN",
-               "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-  background: #f5f5f5;
+  padding: 0;
+  background: #fafafa;
   color: #333;
 }
 
 .store-page {
-  max-width: 960px;
-  margin: 24px auto;
-  padding: 16px;
-  box-sizing: border-box;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding-bottom: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
-/* ヘッダー */
+/* ------------------------------
+   ヘッダー
+------------------------------ */
 .store-header {
-  background: #ffc72c;          /* マクドナルドの黄色 */
-  color: #111;
-  border-radius: 12px;
-  padding: 20px 24px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  text-align: center;
+  padding: 20px 10px 10px;
+  border-bottom: 1px solid #eee;
 }
 
 .store-logo {
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #c00000;               /* ロゴっぽい赤 */
+  font-size: 28px;
+  font-weight: bold;
+  color: #d32f2f; /* マクドナルド風の赤 */
 }
 
 .store-name {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 22px;
+  margin-top: 5px;
+  font-weight: bold;
 }
 
 .store-tagline {
-  font-size: 13px;
-  opacity: 0.85;
-}
-
-/* メイン部分 */
-.store-main {
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1.6fr);
-  gap: 16px;
-}
-
-.store-info,
-.store-hours,
-.store-access,
-.store-services,
-.store-map {
-  background: #fff;
-  border-radius: 12px;
-  padding: 16px 18px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-}
-
-/* 小さい画面では1カラムに */
-@media (max-width: 768px) {
-  .store-main {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* 見出し */
-.store-main h2 {
-  margin: 0 0 10px;
-  font-size: 16px;
-  border-left: 4px solid #ffc72c;
-  padding-left: 8px;
-}
-
-/* 店舗情報 */
-.store-address,
-.store-tel,
-.store-seats {
-  margin: 4px 0;
   font-size: 14px;
-}
-
-/* 営業時間 */
-.store-hours ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-}
-
-.store-hours li {
-  margin: 4px 0;
-}
-
-.store-hours li span {
-  display: inline-block;
-  min-width: 48px;
-  font-weight: 600;
-}
-
-.store-hours .note {
-  margin-top: 8px;
-  font-size: 12px;
   color: #777;
+  margin-bottom: 10px;
 }
 
-/* アクセス */
+/* ------------------------------
+   店舗画像
+------------------------------ */
+.store-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+/* ------------------------------
+   セクション
+------------------------------ */
+.store-main {
+  padding: 20px;
+}
+
+.store-main h2 {
+  font-size: 20px;
+  border-left: 6px solid #d32f2f;
+  padding-left: 10px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.store-info p,
+.store-hours ul,
+.store-access ul,
+.store-services .service-badges {
+  font-size: 16px;
+}
+
+/* ------------------------------
+   リスト
+------------------------------ */
+.store-hours ul,
 .store-access ul {
   list-style: none;
-  margin: 0;
   padding: 0;
-  font-size: 14px;
 }
 
-.store-access li::before {
-  content: "・";
-  margin-right: 2px;
+.store-hours li,
+.store-access li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
 }
 
-/* サービスバッジ */
+/* ------------------------------
+   バッジ（サービス）
+------------------------------ */
 .service-badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
 }
 
 .badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-  background: #f3f3f3;
-  border: 1px solid #ddd;
-}
-
-
-/* 地図エリア */
-.store-map .map-placeholder {
-  margin-top: 8px;
-  background: #e0e0e0;
-  border-radius: 10px;
-  height: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #555;
+  background: #eee;
+  padding: 6px 12px;
+  border-radius: 20px;
   font-size: 14px;
 }
 
-/* ちょっとしたホバー */
-.store-info,
-.store-hours,
-.store-access,
-.store-services,
-.store-map {
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
+.badge-wifi {
+  background: #4caf50;
+  color: #fff;
 }
 
-.store-info:hover,
-.store-hours:hover,
-.store-access:hover,
-.store-services:hover,
-.store-map:hover {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-  transform: translateY(-1px);
-}
-.store-image {
-  margin-top: 12px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+/* ------------------------------
+   Google Map
+------------------------------ */
+.map-embed iframe {
+  border-radius: 6px;
 }
 
-.store-image img {
-  width: 100%;
-  display: block;
+/* ------------------------------
+   ページ間ナビゲーション
+------------------------------ */
+.page-nav {
+  margin-top: 30px;
+  text-align: center;
 }
-.map-embed iframe {
-  width: 100%;
-  height: 260px;
-  border: 0;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+
+.page-nav a {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 10px 18px;
+  background: #d32f2f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
 }
-.map-embed iframe {
-  width: 100%;
-  height: 260px;
-  border: 0;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+
+.page-nav a:hover {
+  background: #b71c1c;
+}
+
+/* ------------------------------
+   スマホ対応
+------------------------------ */
+@media (max-width: 600px) {
+  .store-main {
+    padding: 15px;
+  }
+
+  .page-nav a {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+  }
 }
